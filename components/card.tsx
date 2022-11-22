@@ -7,6 +7,7 @@ const useStyles = createStyles((theme, getRef) => ({
     padding: '10px',
     margin: '15px',
     height: '335px',
+    maxWidth: '95%',
     textAlign: 'left',
     [`@media (max-width: 400px)`]: {
       margin: 'auto'
