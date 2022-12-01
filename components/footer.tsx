@@ -1,6 +1,8 @@
 import { createStyles, Container, Group, ActionIcon } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
+import { IconBrandDiscord } from '@tabler/icons';
 import { AmethystLogo } from './logo';
+import Link from 'next/link';
+
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -37,15 +39,11 @@ export function FooterSocial() {
       <Container className={classes.inner}>
         <AmethystLogo />
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size={18} stroke={1.5} />
-          </ActionIcon>
+          <Link href="https://discord.gg/xrGna3M6s9">
+            <ActionIcon size="lg">
+              <IconBrandDiscord size={18} stroke={1.5} />
+            </ActionIcon>
+          </Link>
         </Group>
       </Container>
     </div>

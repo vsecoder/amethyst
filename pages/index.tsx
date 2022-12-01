@@ -10,6 +10,8 @@ import { createStyles, Button, Container } from '@mantine/core';
 import { useEffect, useState } from 'react'
 import { useScrollIntoView } from '@mantine/hooks';
 
+import axios from 'axios';
+
 const useStyles = createStyles((theme) => ({
   banner: {
     width: '100%',
@@ -47,6 +49,10 @@ const useStyles = createStyles((theme) => ({
     lineHeight: '56px',
     fontStyle: 'normal',
     marginBottom: '22px',
+    [theme.fn.smallerThan('xs')]: {
+      fontSize: '34px',
+      lineHeight: '32px',
+    },
   },
   p: {
     marginBottom: '45px',
@@ -87,6 +93,13 @@ const useStyles = createStyles((theme) => ({
 export default function IndexPage() {
   const { classes } = useStyles();
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({ offset: 60 });
+  const [online, setOnline] = useState('0/100');
+
+  useEffect(() => {
+    axios.get('https://api.trademc.org/shop.getOnline?shop=196689&v=3').then((res) => {
+      setOnline(res.data.response.players+'/'+res.data.response.max_players);
+    });
+  }, []);
 
   return (
     <>
@@ -105,7 +118,7 @@ export default function IndexPage() {
                 color="gray"
                 size="md"
                 m={10}
-                onClick={() => {Router.push('https://docs.google.com/forms/d/e/1FAIpQLSf7x5Xwib3AD9fz8-PQXPJgmZnPzG4y5Kpby0mSa66Sxfm9dw/viewform')}}
+                onClick={() => {Router.push('https://docs.google.com/forms/d/e/1FAIpQLScvYH8osK5IaB7Vilf76vcYU4K77hvNBY8rPih9lc-idxkvJg/viewform?usp=sharing')}}
               >Подать заявку</Button>
               <Button
                 variant="subtle"
@@ -114,7 +127,7 @@ export default function IndexPage() {
                 className={classes.white}
               >О сервере</Button>
             </div>
-            <p className={classes.p}>Пиратка Java Edition 1.19.2</p>
+            <p className={classes.p}>Онлайн {online}</p>
           </div>
         </div>
         <img src='/banner.webp' className={classes.banner_img} />

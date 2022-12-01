@@ -15,8 +15,9 @@ const useStyles = createStyles((theme) => ({
   link: {
     color: 'white',
     cursor: 'pointer'
-  }
+  },
 }));
+
 
 export function AmethystLogo() {
   const { classes } = useStyles();
@@ -24,8 +25,8 @@ export function AmethystLogo() {
   return (
     <Link href='/' className={classes.link}>
       <div className={classes.inline}>
-        <img src="/favicon.png" className={classes.image} />
-        <h2 className={classes.inline}>Amethyst</h2>
+        <img src="/logo.png" className={classes.image} />
+        <h2 className={classes.inline}>LazyLand</h2>
       </div>
     </Link>
   );

@@ -19,8 +19,8 @@ export default function App(props: AppProps) {
   return (
     <>
       <Head>
-        <title>Amethyst RP</title>
-        <link rel="shortcut icon" href="/favicon.png" />
+        <title>LazyLand</title>
+        <link rel="shortcut icon" href="/logo.png" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

@@ -78,7 +78,7 @@ export function FeaturesTitle() {
 
           <Button
             variant="gradient"
-            onClick={() => {Router.push('https://docs.google.com/forms/d/e/1FAIpQLSf7x5Xwib3AD9fz8-PQXPJgmZnPzG4y5Kpby0mSa66Sxfm9dw/viewform')}}
+            onClick={() => {Router.push('https://docs.google.com/forms/d/e/1FAIpQLScvYH8osK5IaB7Vilf76vcYU4K77hvNBY8rPih9lc-idxkvJg/viewform?usp=sharing')}}
             gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
             size="lg"
             radius="md"

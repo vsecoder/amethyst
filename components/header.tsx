@@ -10,9 +10,7 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
-  IconLogout,
-  IconUserExclamation,
-  IconUserPlus,
+  IconAlignJustified,
   IconChevronDown
 } from '@tabler/icons';
 import { SwitchToggle } from './themetoggle';
@@ -40,26 +38,10 @@ const useStyles = createStyles((theme) => ({
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
     },
-
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('xs')]: {
-      display: 'none',
-    },
   },
 
   userActive: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-  },
-
-  tabs: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
   },
 
   tabsList: {
@@ -94,7 +76,6 @@ export function HeaderTabs() {
         <Group position="apart">
           <AmethystLogo />
 
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
 
           <Menu
             width={260}
@@ -116,6 +97,12 @@ export function HeaderTabs() {
               <Menu.Item>
                 <SwitchToggle />
               </Menu.Item>
+              <Link href="https://docs.google.com/document/d/1-iOmTCcSNUyfM19MmTHZ7KQzRhz-vY4O-wQqXIw7M9I/edit">
+                <Menu.Item icon={<IconAlignJustified size={14} color={theme.colors.red[6]} stroke={1.5} />}>
+                  Правила
+                </Menu.Item>
+              </Link>
+
             </Menu.Dropdown>
           </Menu>
         </Group>

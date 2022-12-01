@@ -19,6 +19,7 @@
     "@mantine/next": "5.1.0",
     "@tabler/icons": "^1.102.0",
     "@wiicamp/react-minecraft-skin-viewer": "^1.0.6",
+    "axios": "^1.2.0",
     "embla-carousel-react": "^7.0.3",
     "next": "12.2.4",
     "nookies": "^2.5.2",
